@@ -325,14 +325,13 @@ def main(win, width):
                     for row in grid:
                         for spot in row:
                             spot.update_neighbors(grid)
-
-                        bfs_algorithm(lambda: draw(win, grid, rows, width), grid, start, end)
+                    dijkstra_algorithm(lambda: draw(win, grid, rows, width), grid, start, end)
+                    
                 # After setting up, press D to run DFS algorithm
                 if event.key == pygame.K_d and start and end:
                     for row in grid:
                         for spot in row:
                             spot.update_neighbors(grid)
-
-                    bfs_algorithm(lambda: draw(win, grid, rows, width), grid, start, end)
+                    dfs_algorithm(lambda: draw(win, grid, rows, width), grid, start, end)
 
 main(WIN, WIDTH)
